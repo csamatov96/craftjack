@@ -16,7 +16,7 @@ resource "aws_instance" "docker_server" {
       private_key = "${file(var.ssh_key_location)}"
     }
 
-    inline = [
+    inline = [ #Tunji, please install awscli, docker, .NET Core version 3.1.201, add a line docker pull 951251854577.dkr.ecr.us-east-1.amazonaws.com/repo:latest and then run an image  
       "sudo curl -O https://bootstrap.pypa.io/get-pip.py && sudo python get-pip.py",
       "sudo /usr/local/bin/pip --version",
       "sudo /usr/local/bin/pip install awscli",
