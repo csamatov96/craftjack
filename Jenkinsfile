@@ -34,8 +34,8 @@
           }
 
           stage("Testing the application") {
-            dir("${WORKSPACE}/deployments/terraform") {
-              sh '''#!/bin/bash -e                  
+            dir("${WORKSPACE}/deployments/terraform") { //dotnet test
+              sh '''#!/bin/bash -e             
               for i in $(cat public_ip_address.txt);  do ./bash_scripts/healtcheck.sh $i 8080; done'''
             }
           }
